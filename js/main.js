@@ -1,6 +1,4 @@
-$('.employee-div').on('click', function () {
-    $('.overlay, .overlay-back').fadeIn(500);
-});
+
 
 function getUserInfo(id) {
 $.ajax({
@@ -9,15 +7,15 @@ $.ajax({
   success: function(data) {
     console.log(data);
     $(".directory-div").append(`
-      <div class= "employee-div" id="${id}">
-      <img src="4.jpg">
-      <div class= "employee-text">
-        <h2 class="capitalize">${data.results[0].name.first} ${data.results[0].name.last}</h2>
-        <p>${data.results[0].email}</p>
-        <p class="capitalize">${data.results[0].location.city} </p>
+      <div class= "employee-div" id="a${id}">
+        <img src="${data.results[0].picture.medium}">
+        <div class= "employee-text">
+          <h2 class="capitalize">${data.results[0].name.first} ${data.results[0].name.last}</h2>
+          <p>${data.results[0].email}</p>
+          <p class="capitalize">${data.results[0].location.city} </p>
         <div class="overlay">
           <div class="close-btn">X</div>
-          <img src="4.jpg">
+          <img src="${data.results[0].picture.medium}">
           <div class= "overlay-text">
             <h2 class="capitalize">${data.results[0].name.first} ${data.results[0].name.last}</h2>
             <p>${data.results[0].email}</p>
@@ -41,7 +39,6 @@ for(let i = 1; i<=12; i++) {
   getUserInfo(id)
 }
 
-$('#1').on('click', function () {
-    $('.overlay, .overlay-back').fadeIn(500);
+$('#a1').on('click',  () => {
     alert("It do work");
 });
