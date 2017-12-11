@@ -6,7 +6,7 @@ $.ajax({
   dataType: 'json',
   success: function(data) {
     console.log(data);
-    searchContent += "<option value=\"" +data.results[0].name.first + " " +data.results[0].name.last+"\">"
+    searchContent += "<option value=\"" +data.results[0].name.first + " " +data.results[0].name.last+"\">";
     $(".directory-div").append(`
       <div class= "employee-div" id="a${id}">
         <img src="${data.results[0].picture.medium}">
