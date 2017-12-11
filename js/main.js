@@ -1,4 +1,4 @@
-
+var searchContent = "";
 
 function getUserInfo(id) {
 $.ajax({
@@ -6,6 +6,7 @@ $.ajax({
   dataType: 'json',
   success: function(data) {
     console.log(data);
+    searchContent += "<option value=\"" +data.results[0].name.first + " " +data.results[0].name.last+"\">"
     $(".directory-div").append(`
       <div class= "employee-div" id="a${id}">
         <img src="${data.results[0].picture.medium}">
@@ -37,7 +38,11 @@ $.ajax({
 for(let i = 1; i<=12; i++) {
   var id = i;
   getUserInfo(id);
-}
+  if(i === 12) {
+  $("#user-list").append(searchContent);
+}}
+
+
 
 $('#a1').on('click',  () => {
     alert("It do work");
