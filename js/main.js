@@ -27,16 +27,16 @@ $.ajax({
             <p>Birthday: ${data.results[0].dob}</p>
           </div>
       </div>
-      `)
+      `);
   }
 });
-};
+}
 
 
 
 for(let i = 1; i<=12; i++) {
   var id = i;
-  getUserInfo(id)
+  getUserInfo(id);
 }
 
 $('#a1').on('click',  () => {
