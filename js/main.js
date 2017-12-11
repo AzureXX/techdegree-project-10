@@ -1,14 +1,14 @@
 var searchContent = "";
 
-function getUserInfo(id) {
+for(let i = 1; i<=12; i++) {
 $.ajax({
   url: 'https://randomuser.me/api/?nat=gb',
   dataType: 'json',
   success: function(data) {
     console.log(data);
-    searchContent += "<option value=\"" +data.results[0].name.first + " " +data.results[0].name.last+"\">";
+    $("#user-list").append("<option value=\"" +data.results[0].name.first + " " +data.results[0].name.last+"\">");
     $(".directory-div").append(`
-      <div class= "employee-div" id="a${id}">
+      <div class= "employee-div" id="${i}">
         <img src="${data.results[0].picture.medium}">
         <div class= "employee-text">
           <h2 class="capitalize">${data.results[0].name.first} ${data.results[0].name.last}</h2>
@@ -29,21 +29,18 @@ $.ajax({
           </div>
       </div>
       `);
-  }
-});
+    }
+  });
 }
 
+function  overlay(i) {
+  $('#'+i).on('click',  () => {
+    $("#" +i+ " .overlay, .overlay-back").fadeIn(500);
+  });
+}
 
-
-for(let i = 1; i<=12; i++) {
-  var id = i;
-  getUserInfo(id);
-  if(i === 12) {
-  $("#user-list").append(searchContent);
-}}
-
-
-
-$('#a1').on('click',  () => {
-    alert("It do work");
-});
+function overlayAll() {
+for (var i = 1; i <=12; i++) {
+  overlay(i);
+  }
+}
