@@ -40,7 +40,10 @@ h1 {
   border: 1px solid black;
   display: flex;
   flex-flow: row wrap;
+}
 
+.employee-div:hover {
+  background-color: lightgrey;
 }
 
 .employee-div img {
@@ -58,6 +61,7 @@ h1 {
 .employee-text h2{
   font-size: 1.25em;
   line-height: 1.5em;
+
 }
 
 .employee-text p {
@@ -66,7 +70,9 @@ h1 {
   color: #9A9DA0;
   line-height: 1.5em;
 }
-
+.capitalize {
+text-transform: capitalize;
+}
 /*Overlay*/
 .overlay-back {
     position   : absolute;
