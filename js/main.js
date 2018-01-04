@@ -67,7 +67,7 @@ $.ajax({
         <img src="${data.results[0].picture.medium}">
         <div class= "employee-text">
           <h2 class="capitalize" id="${number*4+i}">${data.results[0].name.first} ${data.results[0].name.last}</h2>
-          <p>${data.results[0].email}</p>
+          <p>${data.results[0].login.username}</p>
           <p class="capitalize">${data.results[0].location.city} </p>
         </div>
       </div>
@@ -76,12 +76,12 @@ $.ajax({
         <img src="${data.results[0].picture.medium}">
         <div class= "overlay-text">
           <h2 class="capitalize" >${data.results[0].name.first} ${data.results[0].name.last}</h2>
+          <p>${data.results[0].login.username}</p>
           <p>${data.results[0].email}</p>
-          <p class="capitalize">${data.results[0].location.city}</p>
         </div>
         <div class= "overlay-text-contact">
           <p>${data.results[0].phone}</p>
-          <p class="capitalize">${data.results[0].location.street}, ${data.results[0].location.state}, ${data.results[0].location.postcode}</p>
+          <p class="capitalize">${data.results[0].location.street}, ${data.results[0].location.city}, ${data.results[0].location.postcode}</p>
           <p>Birthday: ${data.results[0].dob}</p>
           <button class="previous" id="${number*2+i}">Previous</button>
           <button class="next" id="${number*3+i}">Next</button>
